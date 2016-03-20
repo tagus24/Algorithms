@@ -3,9 +3,9 @@ package algorithms;
 import org.junit.Test;
 import static org.assertj.core.api.Assertions.*;
 
-public class ClassicProblemsStringsUT {
+public class ClassicStringProblemsUT {
 	
-	ClassicProblemsStrings classicProblemsStrings = new ClassicProblemsStrings();
+	ClassicStringProblems classicProblemsStrings = new ClassicStringProblems();
 	
 	@Test
 	public void whenNullStringThenNoDuplicates(){
@@ -175,4 +175,102 @@ public class ClassicProblemsStringsUT {
 	}
 	
 	//////////////////////////////////////
+	
+	@Test
+	public void whenReverseNullStringThenEmpty(){
+		
+		String s1 = null;
+		String result = classicProblemsStrings.reverseString(s1);
+		assertThat(result).isEqualTo("");
+		
+	}
+	
+	
+	@Test
+	public void whenReverseEmptyStringThenEmpty(){
+		
+		String s1 = "";
+		String result = classicProblemsStrings.reverseString(s1);
+		assertThat(result).isEqualTo("");
+		
+	}
+	
+	@Test
+	public void whenReverseStringThenStringReverse(){	
+		String s1 = "abcdefgh";
+		String result = classicProblemsStrings.reverseString(s1);
+		assertThat(result).isEqualTo("hgfedcba");
+		
+	}
+	
+	///////////////////
+	
+	@Test
+	public void whenCountVowelsNullStringThenZero(){	
+		String s = null;
+		int result = classicProblemsStrings.countNumberOfVowels(s);
+		assertThat(result).isEqualTo(0);
+		
+	}
+	
+	@Test
+	public void whenCountVowelsEmptyStringThenZero(){	
+		String s = "";
+		int result = classicProblemsStrings.countNumberOfVowels(s);
+		assertThat(result).isEqualTo(0);
+		
+	}
+	
+	@Test
+	public void whenCountVowelsStringThenRightCount1(){	
+		String s = "abc";
+		int result = classicProblemsStrings.countNumberOfVowels(s);
+		assertThat(result).isEqualTo(1);
+		
+	}
+	
+	@Test
+	public void whenCountVowelsStringThenRightCount2(){	
+		String s = "abceidfdfdocccuu";
+		int result = classicProblemsStrings.countNumberOfVowels(s);
+		assertThat(result).isEqualTo(6);
+		
+	}
+	
+	
+	////////////////////
+	
+	@Test
+	public void whenCountConsonantsNullStringThenZero(){	
+		String s = null;
+		int result = classicProblemsStrings.countNumberOfConsoants(s);
+		assertThat(result).isEqualTo(0);
+		
+	}
+	
+	@Test
+	public void whenCountConsonantsEmptyStringThenZero(){	
+		String s = "";
+		int result = classicProblemsStrings.countNumberOfConsoants(s);
+		assertThat(result).isEqualTo(0);
+		
+	}
+	
+	@Test
+	public void whenCountConsonantsStringThenRightCount1(){	
+		String s = "abc";
+		int result = classicProblemsStrings.countNumberOfConsoants(s);
+		assertThat(result).isEqualTo(2);
+		
+	}
+	
+	@Test
+	public void whenCountConsonantsStringThenRightCount2(){	
+		String s = "abceidfdfdocccuu";
+		int result = classicProblemsStrings.countNumberOfConsoants(s);
+		assertThat(result).isEqualTo(10);
+		
+	}
+	
+	
 }

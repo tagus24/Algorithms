@@ -1,13 +1,11 @@
 package algorithms;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.StringTokenizer;
 
-public class ClassicProblemsStrings {
+public class ClassicStringProblems {
 	
 	public String getDuplicateCharacters(String toProcess){
 		
@@ -77,6 +75,25 @@ public class ClassicProblemsStrings {
 			}
 		}
 		return result;
+		
+	}
+	
+	
+	public String reverseString(String s){
+		return s != null?new StringBuilder(s).reverse().toString():"";
+	}
+	
+	//////////////////////////////////////////
+	
+	public int countNumberOfConsoants(String s){
+		
+		return s != null?s.replaceAll("[aeiouAEIOU]","").length():0;
+		
+	}
+	
+	public int countNumberOfVowels(String s){
+		
+		return s != null?s.replaceAll("[a-z&&[^aeiou]]","").length():0;
 		
 	}
 
