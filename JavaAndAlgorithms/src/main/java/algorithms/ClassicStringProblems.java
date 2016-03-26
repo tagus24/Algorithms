@@ -96,5 +96,18 @@ public class ClassicStringProblems {
 		return s != null?s.replaceAll("[a-z&&[^aeiou]]","").length():0;
 		
 	}
+	
+	
+	///////////////////////////////
+	
+	public boolean isPalindromeString(String s){
+		
+		if(reverseString(s).equalsIgnoreCase(s) && !s.isEmpty()){
+			return true;}
+		else{
+			return false;
+		}
+		
+	}
 
 }

@@ -272,5 +272,49 @@ public class ClassicStringProblemsUT {
 		
 	}
 	
+	//////////////////
+	
+	@Test
+	public void whenNullStringThenNotPalindrome(){
+		String test = null;
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(false);
+	}
+	
+	@Test
+	public void whenEmptyStringThenNotPalindrome(){
+		String test = "";
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(false);
+	}
+	
+	@Test
+	public void whenStringThenNotPalindrome(){
+		String test = "abc";
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(false);
+	}
+	
+	@Test
+	public void whenStringThenIsPalindrome1(){
+		String test = "aba";
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(true);
+	}
+	
+	@Test
+	public void whenStringThenIsPalindrome2(){
+		String test = "a";
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(true);
+	}
+	
+	@Test
+	public void whenStringThenIsPalindrome3(){
+		String test = "radar";
+		boolean result = classicProblemsStrings.isPalindromeString(test);
+		assertThat(result).isEqualTo(true);
+	}
+	
 	
 }
