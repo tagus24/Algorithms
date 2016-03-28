@@ -36,8 +36,50 @@ public class ClassicProblemsArraysUT {
 	
 	////////////////////////////////////////////////////////
 	
+	@Test
+	public void whenNullArrayThenEmptyArray(){
+		int[] arrayToTest = null;
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).isEmpty();
+	}
+	
+	@Test
+	public void whenEmptyArrayThenEmptyArray(){
+		int[] arrayToTest = {};
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).isEmpty();
+	}
 	
 	
+	@Test
+	public void whenArrayThenArrayWithoutDups1(){
+		int[] arrayToTest = {1};
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).hasSize(1);
+	}
 	
+	@Test
+	public void whenArrayThenArrayWithoutDups2(){
+		int[] arrayToTest = {1,2};
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).hasSize(2);
+		assertThat(arrayWithoutDups[1]).isEqualTo(2);
+	}
+	
+	@Test
+	public void whenArrayThenArrayWithoutDups3(){
+		int[] arrayToTest = {1,2,1};
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).hasSize(2);
+		assertThat(arrayWithoutDups[1]).isEqualTo(2);
+	}
+	
+	@Test
+	public void whenArrayThenArrayWithoutDups4(){
+		int[] arrayToTest = {1,2,1,3,4,5,5,6,7,2,8,9,15,9,10};
+		int[] arrayWithoutDups = classicProblems.removeDupsIntArray(arrayToTest);
+		assertThat(arrayWithoutDups).hasSize(11);
+		assertThat(arrayWithoutDups[10]).isEqualTo(15);
+	}
 
 }
